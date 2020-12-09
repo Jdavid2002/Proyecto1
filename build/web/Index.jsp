@@ -37,44 +37,46 @@
     <script src="js/sb-admin-datatables.min.js"></script>
     <script src="js/sb-admin-charts.min.js"></script>
 </head>
-body class="fixed-nav sticky-footer bg-dark" id="page-top">
-<!-- Navigation-->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
-    <a class="navbar-brand" href="Index.jsp">CRM</a>
-    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
-            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Posibles clientes">
-                <a class="nav-link" href="PosiblesClientes.jsp">
-                    <i class="fa fa-fw fa-address-book"></i>
-                    <span class="nav-link-text">Posibles clientes</span>
-                </a>
-            </li>
-        </ul>
-        <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-                <a class="nav-link" href="Login.jsp">
-                    <i class="fa fa-fw fa-sign-out"></i>Salir</a>
-            </li>
-        </ul>
-    </div>
-</nav>
-<div class="content-wrapper">
-    <div class="container-fluid">
-
-    </div>
-    <!-- /.container-fluid-->
-    <!-- /.content-wrapper-->
-    <footer class="sticky-footer">
-        <div class="container">
-            <div class="text-center">
-                <small>Copyright © CRM 2018</small>
-            </div>
+ </head>
+    body class="fixed-nav sticky-footer bg-dark" id="page-top">
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+        <a class="navbar-brand" href="Index.jsp">CRM</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Posibles clientes">
+                    <a class="nav-link" href="PosiblesClientes.jsp">
+                        <i class="fa fa-fw fa-address-book"></i>
+                        <span class="nav-link-text">Posibles clientes</span>
+                    </a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="Login.jsp">
+                        <i class="fa fa-fw fa-sign-out"></i>Salir</a>
+                </li>
+            </ul>
         </div>
-    </footer>
-</div>
+    </nav>
+    <div class="content-wrapper">
+        <div class="container-fluid">
+
+        </div>
+        <!-- /.container-fluid-->
+        <!-- /.content-wrapper-->
+        <footer class="sticky-footer">
+            <div class="container">
+                <div class="text-center">
+                    <small>Copyright © CRM 2018</small>
+                </div>
+            </div>
+        </footer>
+    </div>
 </body>
 
 </html>
+

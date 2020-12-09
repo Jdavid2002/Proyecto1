@@ -17,8 +17,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Juan David
  */
-@WebServlet(name = "PosiblesClientesControllers", urlPatterns = {"/PosiblesClientesControllers"})
-public class PosiblesClientesControllers extends HttpServlet {
+@WebServlet(name = "LoginController", urlPatterns = {"/LoginController"})
+public class LoginController extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -29,22 +29,42 @@ public class PosiblesClientesControllers extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+      protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet PosiblesClientesControllers</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet PosiblesClientesControllers at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
-        }
+       
+        try{
+            String stMensaje= "";
+            if(request.getParameter("txtEmail") .equals("")){
+                stMensaje +="Ingrese email,";
+            }
+            if(request.getParameter("txtPassword") .equals("")) {
+                stMensaje +="Ingrese Password,";
+            }
+           
+            if(!stMensaje.equals(""))throw new Exception(stMensaje.substring(0,stMensaje.length()-1));
+            //intanciando objeto
+            Models.clsLogin obclsLogin=new Models.clsLogin();
+            obclsLogin.setStEmail(request.getParameter("txtEmail"));
+            obclsLogin.setStPassword(request.getParameter("txtPassword"));
+            
+            //intanciando controlador
+            BL.clsLogin obBLcslLogin =new BL.clsLogin();
+            
+            //invoco el metodo validarLogin
+            boolean blBandera= obBLcslLogin.validarLogin(obclsLogin);
+            if(blBandera)
+                //direcionamiento JSP
+     request.getRequestDispatcher("Index.jsp").forward(request, response);
+            else
+        throw new Exception("Email o Password incorrecto");
+                                 
+    }catch(Exception ex){
+       request.setAttribute("stError", ex.getMessage());
+       //Envio de parametros o valores
+       //direcionamiento JSP
+       request.getRequestDispatcher("Login.jsp").forward(request, response);
     }
+        }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
